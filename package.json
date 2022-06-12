@@ -1,0 +1,23 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "file-manager",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexSch1/node-file-manager.git"
+  },
+  "keywords": [
+    "node-js"
+  ],
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexSch1/node-file-manager/issues"
+  },
+  "homepage": "https://github.com/AlexSch1/node-file-manager#readme"
+}
