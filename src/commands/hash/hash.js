@@ -1,3 +1,4 @@
+import stream from "stream";
 import fs from "fs/promises";
 import crypto from "crypto";
 import {getWorkDir} from "../os/oscmd.js";
@@ -12,4 +13,8 @@ export const calculateHash = async (fileToPath) => {
     } catch (e) {
         console.error("\x1b[31m", `Operation failed`, "\x1b[0m");
     }
+
+    // const hash = crypto.createHash('sha256')
+    // const readableStream = stream.createReadStream(fileToPath)
+    // await stream.pipeline(readableStream, hash.setEncoding('hex'), process.stdout)
 };

@@ -1,4 +1,5 @@
 import path from "path";
+import stream from "stream";
 import fs from "fs/promises";
 import fsPromises from "fs/promises";
 import {list} from "../nwd/nwd.js";
@@ -18,6 +19,13 @@ export const readFile = async (pathToFile) => {
     } catch (e) {
         console.error("\x1b[31m", 'Operation failed', "\x1b[0m");
     }
+    
+    // try {
+    //     const readableStream = stream.createReadStream(pathToFile, { encoding: 'utf8' })
+    //     await stream.pipeline(readableStream, process.stdout);
+    // } catch (e) {
+    //
+    // }
 }
 
 export const create = async (pathToFile) => {
@@ -28,6 +36,15 @@ export const create = async (pathToFile) => {
     catch (e) {
         throw new Error('Operation failed');
     }
+
+    // let fh;
+    // try {
+    //     fh = await fs.open(pathToFile, 'w');
+    // } catch (e) {
+    //     console.log('Operation failed')
+    // } finally {
+    //     fh?.close();
+    // }
 };
 
 export const remove = async (filePath) => {
@@ -43,6 +60,8 @@ export const remove = async (filePath) => {
     } catch (e) {
         console.error('\x1b[31m', e.message, '\x1b[0m');
     }
+
+    // await fs.unlink(filePath);
 };
 
 export const rename = async (oldName, newName) => {
@@ -68,6 +87,15 @@ export const copy = async (path_to_file, path_to_new_directory) => {
     } catch (e) {
         console.error('\x1b[31m', e.message, '\x1b[0m');
     }
+
+    // try {
+    //     const readableStream = stream.createReadStream(path_to_file)
+    //     const writableStream = stream.createWriteStream(path_to_new_directory)
+    //     await stream.pipeline(readableStream, writableStream)
+    //     // console.log('')
+    // } catch (error) {
+    //     console.error('Operation failed')
+    // }
 
 }
 
@@ -113,6 +141,11 @@ export const moveFile = async (path_to_file, path_to_new_directory) => {
     } catch (e) {
         console.error('\x1b[31m', e.message, '\x1b[0m');
     }
+
+    // const readableStream = createReadStream(pathToFile)
+    // const writableStream = createWriteStream(pathToNewDirectory)
+    // await pipeline(readableStream, writableStream)
+    // await unlink(pathToFile)
 
 
 }

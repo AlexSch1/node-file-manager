@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import path from "path";
 import {addNewDirToPath, getWorkDir, setWorkDir} from "../os/oscmd.js";
 import {HOME_DIR, PATH_SEP} from "../../constants/constants.js";
+import {chdir} from "process";
 
 export const list = async (dirPath) => {
     try {
@@ -24,9 +25,16 @@ export const cd = async (pathToDir) => {
     } catch (e) {
         console.log('Invalid input');
     }
+
+    // try {
+    //     chdir(pathToDir);
+    // } catch (e) {
+    //
+    // }
 }
 
 export const up = async () => {
+    // chdir('..');
     try {
         const rootPath = HOME_DIR.split(PATH_SEP)[0];
 
